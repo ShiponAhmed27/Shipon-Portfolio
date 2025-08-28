@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+}
+
+nav.sticky {
+    @apply py-1
+}
+nav {
+    transition: padding 200ms;
+    padding-right: max(16px, env(safe-area-inset-right));
+    padding-left: max(16px, env(safe-area-inset-left))
+}
+
+
+
+.border {
+    border-width:2px
+}
+
+.border-box {
+    border-width:2px
+}
+
+.active2 {
+    @apply text-white font-bold
+}
+
+.activespan {
+    @apply bg-[#00e0f2] visible
+}
+
+.skills-boxes {
+    @apply flex justify-center space-x-3 items-center bg-[#1C1C20] px-4 py-3 rounded-lg border border-[#17171A]
+}
+
+.language-box {
+    @apply flex justify-center bg-gray-300 space-x-2 items-center px-2 py-1 text-base-300 rounded-lg border-box border-[#17171A]
+}
+
+.project-box {
+    @apply bg-[#1C1C20] border rounded-xl border-[#17171A]
+}
+
+.bg-opacity-85 {
+    --tw-bg-opacity: 0.85;
+}
+
+#caret {
+    transform: rotate(180deg);
+}
+
+main {
+    transition: padding 200ms;
+    max-width: 52rem/* 896px */;
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right)) 
+}
+
+@media (min-width: 640px) {
+    nav {
+        padding-left: max(3rem, env(safe-area-inset-left));
+        padding-right: max(3rem, env(safe-area-inset-right)) 
+    }
+}
+
+@media (max-width: 640px) {
+    a#scroll-btn {
+        bottom: 3em;
+    }
+}
+
+@media (max-height: 640px) {
+    a#scroll-btn {
+        visibility: hidden;
+    }
+    #home {
+        padding-top: 6em;
+    }
+    #aboutme {
+        padding-top: 3em;
+    }
+    #hithere {
+        padding: 1.5em;
+    }
+    #hi {
+        @apply text-5xl
+    }
+    #myname {
+        @apply text-3xl
+    }
+    #booksimage {
+        @apply h-28
+    }
+    #intro {
+        @apply mb-0
+    }
+    #introbox {
+        @apply space-y-20
+    }
+}
+
+a#scroll-btn {
+    position: absolute;
+    height: 2.6em;
+    width: 1.65em;
+    border: 0.15em solid #ffffff;
+    margin: auto;
+    border-radius: 3em;
+
+}
+
+a#scroll-btn:before {
+    position: absolute;
+    content: "";
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 0.4em;
+    height: 0.4em;
+    width: 0.4em;
+    background-color: #ffffff;
+    border-radius: 50%;
+    animation: move-down 1.5s infinite;
+
+}
+
+@keyframes move-down {
+    80%{
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(-1.15em);
+        opacity: 0;
+    }
+}
+
+a#scroll-btn:after {
+    position: absolute;
+    content: "SCROLL DOWN";
+    width: 12em;
+    display: block;
+    text-align: center;
+    left: -4.75em;
+    bottom: -2.5em;
+    font-size: 0.7em;
+    color: #ffffff;
+    letter-spacing: 3px;
+    font-weight: 600;
+
+}
